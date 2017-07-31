@@ -13,11 +13,6 @@ export const newGameReducer = (state = initialState, action) => {
           guesses: [],
           feedback: 'Make your guess!'  
         });
-    } else if (action.type === actions.DECREMENT) {
-        console.log('It was an decrement');
-        return Object.assign({}, state, {
-            counter: state.counter - action.by
-        });
-    }
+    } 
     return state;
 };
