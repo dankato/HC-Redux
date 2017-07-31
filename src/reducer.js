@@ -11,8 +11,7 @@ export const newGameReducer = (state = initialState, action) => {
         console.log('It was a new game');
         return Object.assign({}, state, {
           guesses: [],
-          feedback: 'Make your guess!',
-          correctAnswer: Math.floor(Math.random() * 100) + 1,  
+          feedback: 'Make your guess!'  
         });
     } else if (action.type === actions.DECREMENT) {
         console.log('It was an decrement');
