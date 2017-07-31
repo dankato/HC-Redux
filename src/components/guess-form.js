@@ -1,16 +1,19 @@
 import React from 'react';
 
 import './guess-form.css';
+import {TOGGLE_INFO} from '../actions'
 
 export default class GuessForm extends React.Component {
     onGuess(event) {
         event.preventDefault();
+        console.log('button clicked');
 
         if (this.props.onGuess) {
             const value = this.input.value;
             this.props.onGuess(value);
         }
         this.input.value = '';
+       // this.props.dispatch(TOGGLE_INFO)
     }
 
     render() {

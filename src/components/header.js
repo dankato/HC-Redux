@@ -1,4 +1,5 @@
 import React from 'react';
+import {TOGGLE_INFO} from '../actions'
 
 import TopNav from './top-nav';
 import InfoModal from './info-modal';
@@ -14,6 +15,7 @@ export default class Header extends React.Component  {
     }
 
     toggleInfoModal() {
+        console.log()
         this.setState({
             showInfoModal: !this.state.showInfoModal
         });
