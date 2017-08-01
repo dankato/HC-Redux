@@ -3,39 +3,43 @@ import * as actions from './actions';
 const initialState = {
     guesses: [],
     feedback: 'Make your guess!',
-    correctAnswer: Math.floor(Math.random() * 100) + 1
+    correctAnswer: Math.floor(Math.random() * 100) + 1,
+    showInfoModal: false,
 };
 
-export const newGameReducer = (state = initialState, action) => {
-    console.log('It was a new game');
-    console.log(action.type, 'test action');
+// export const newGameReducer = (state = initialState, action) => {
+//     if (action.type === actions.NEWGAME) {
+//         return Object.assign({}, state, {
+//           guesses: [],
+//           feedback: 'Make your guess!'  
+//         });
+//     } 
+//     return state;
+// };
+
+export const reducer = (state = initialState, action) => {
+    if(action.type === actions.TOGGLE_INFO) {
+        return Object.assign({}, state, {
+            showInfoModal: !state.showInfoModal
+        });
+    }
+
     if (action.type === actions.NEWGAME) {
-       console.log('going inside?')
         return Object.assign({}, state, {
           guesses: [],
           feedback: 'Make your guess!'  
         });
     } 
-    return state;
-};
 
-export const toggleInfoReducer = (state = initialState, action) => {
-    console.log('toggleInfoReducer clicked');
-    if(action.type === actions.TOGGLE_INFO) {
-        console.log(state);
+    if(action.type === action.guess) {
         return Object.assign({}, state, {
-            showInfoModal: !this.state.showInfoModal
-        });
+        // saving for tuesday
+
+        })
     }
+
+
+
     return state;
 };
 
-// export const guessReducer = (state, initialState, action) => {
-//     if(action.type === action.guess) {
-//         return Object.assign({}, state, {
-        
-
-            
-//         })
-//     }
-// }

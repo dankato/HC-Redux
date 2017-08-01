@@ -1,10 +1,5 @@
 import {createStore, combineReducers} from 'redux';
-import {newGameReducer, toggleInfoReducer} from './reducers';
+import {reducer} from './reducers';
 
 
-export default createStore(
-    combineReducers({
-        newGame: newGameReducer,
-        toggleInfo: toggleInfoReducer
-    })
-)
+export default createStore(reducer)

@@ -8,7 +8,9 @@ import {toggleInfo, newGame} from './actions';
 import Game from './components/game';
 
 store.dispatch(newGame);
-store.dispatch(toggleInfo);
+// store.dispatch(toggleInfo);
+
+console.log(store.getState());
 
 ReactDOM.render(
     <Game />,
